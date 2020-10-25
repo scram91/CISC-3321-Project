@@ -1,29 +1,25 @@
 #include <iostream>
 #include <string>
 
+
 using namespace std;
 
 class Employee {
 public:
 	string firstName;
 	string lastName;
-	double hoursScheduled;
 	double hoursWorked;
-	int type;
-private:
 	int id;
+	int type;
+	void getEmpData();
+private:
+	double hoursScheduled;
 
 public: Employee(string FirstName, string LastName, int ID) {
 	firstName = FirstName;
 	lastName = LastName;
 	id = ID;
 }
-	  void setID(int x) {
-		  id = x;
-	  }
-	  int getID() {
-		  return id;
-	  }	  
 	  int setEmployeeType(int x) {
 		  type = x;
 
@@ -31,7 +27,7 @@ public: Employee(string FirstName, string LastName, int ID) {
 	  }
 };
 
-class printSchedule {
+class printSchedule { //This needs to be developed
 private:
 	string dayName;
 	int day;
@@ -54,10 +50,23 @@ public:
 
 class Hourly : public Employee{
 public:
-	double hourlyRate;	
-	//tax rate for hourly employees is 0.04
-	double calcWage
+	double hourlyRate; //tax rate for hourly employees is 0.04
+
+	double calcWage = hourlyRate * hoursWorked;
 };
+
+void Employee::getEmpData() {
+	int n{ 0 };
+	cout << "Enter Employee's first name: ";
+	cin >> firstName;
+	cout << "\nEnter Employee's last name: ";
+	cin >> lastName;
+	cout << "\nEnter Employee's ID: ";
+	cin >> id;
+	cout << "/nEnter Employee type 0 for hourly and 1 for salary: ";
+	cin >> n;
+	setEmployeeType(n);
+}
 
 int main() {
 
