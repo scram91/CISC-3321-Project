@@ -1,7 +1,8 @@
 #pragma once
 #include <iostream>
-using namespace std;
 #include "Employee.h"
+using namespace std;
+
 
 class HR : public Employee {
 public:
