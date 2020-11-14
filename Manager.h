@@ -1,7 +1,8 @@
 #pragma once
 #include <iostream>
-using namespace std;
 #include "Employee.h"
+using namespace std;
+
 
 class Manager : public Employee {
 public:
@@ -12,4 +13,5 @@ public:
 
 	// get department number
 	virtual string getDeptName();
+
 };
