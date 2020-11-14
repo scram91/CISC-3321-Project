@@ -1,10 +1,12 @@
 #pragma once
 #include <iostream>
-using namespace std;
 #include <string>
+using namespace std;
+
 
 // Employee abstract class
 class Employee {
+
 public:
 	// show employee information
 	virtual void showInfo() = 0;
@@ -15,9 +17,9 @@ public:
 	// employee number
 	int m_Id;
 
-	// employee name
-	string m_Name;
-
 	// department number
 	int m_DeptId;
+
+	string m_Name;
+
 };
